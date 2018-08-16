@@ -1,0 +1,16 @@
+version: '2'
+services:
+  worker01:
+    build: .
+    env_file: ./.env
+    command: node ./app
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+  worker02:
+    build: .
+    env_file: ./.env
+    command: node ./app
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules

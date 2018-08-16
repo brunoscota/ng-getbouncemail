@@ -32,7 +32,7 @@ GetBounceMail = function() {
     return new Promise((resolve,reject) =>{
         let request = {
             method: 'GET',
-            url: '/v3/suppression/bounces/br1unossssssa@gmail.com'
+            url: '/v3/suppression/bounces/brunossssssa@gmail.com'
         }
         sgClient.request(request)
         .then(([response, body]) => {
@@ -50,6 +50,7 @@ SendMailAlert = function(returned, mailto, subject, mailfrom){
             text: `Hi! THIS IS AN AUTOMATED MESSAGE TO ALERT YOU ABOUT A BOUNCED MAIL - PLEASE DO NOT REPLY DIRECTLY TO THIS EMAIL \n\n\n Email: ${returned[0].email} \n Reason: ${returned[0].reason} \n Code Status: ${returned[0].status}`,
           };
           sgMail.send(msg);
+          console.log(msg);
           resolve("sent");
     });
 }
