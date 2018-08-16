@@ -1,9 +1,13 @@
 version: '3'
+networks: 
+  workers:
 services:
   worker01:
     build: .
     env_file: ./.env
     command: node ./app
+    networks:
+      - workers
     volumes:
       - .:/usr/app/
       - /usr/app/node_modules
@@ -11,6 +15,8 @@ services:
     build: .
     env_file: ./.env
     command: node ./app
+    networks:
+      - workers
     volumes:
       - .:/usr/app/
       - /usr/app/node_modules
@@ -18,6 +24,8 @@ services:
     build: .
     env_file: ./.env
     command: node ./app
+    networks:
+      - workers
     volumes:
       - .:/usr/app/
-      - /usr/app/node_modules            
+      - /usr/app/node_modules
