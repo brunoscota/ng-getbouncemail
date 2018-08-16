@@ -1,0 +1,19 @@
+{
+  "name": "ng-getbouncemail",
+  "version": "1.0.0",
+  "description": "A worker for get bounced mail",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "worker"
+  ],
+  "author": "Bruno Scota de Carvalho",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/client": "^6.3.0",
+    "@sendgrid/mail": "^6.3.1",
+    "dotenv": "^6.0.0"
+  }
+}
